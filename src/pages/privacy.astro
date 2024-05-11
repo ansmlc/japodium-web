@@ -10,31 +10,43 @@ import Sectionhead from "@components/sectionhead.astro";
       <Fragment slot="title">Privacy</Fragment>
       <Fragment slot="desc">Privacy Policy</Fragment>
     </Sectionhead>
-
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Privacy policy for Japodium app.
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
-        Your privacy is important to us. This application does not collect any
-        private information from users. However, to enhance user experience, we
-        utilize third-party analytical tools that gather anonymous data about
-        app usage, such as the number of visits, time spent on the application,
-        button clicks, and similar metrics. Additionally, by clicking on certain
-        buttons or elements within the application, users may be presented with
-        available navigation applications (the application reads from the device
-        which navigation applications are installed). It is important to note
-        that this application does not collect or share your private data in
-        these interactions. This application does not require login or creation
-        of a user account and is open for use to everyone regardless of age. We
-        use Firebase Crashlytics and Firebase Performance as third-part tools to
-        monitor the stability of the application and improve performance by
-        collecting crash data. This tool gathers information such as device
-        state at the time of the crash, device type, operating system version,
-        and similar metadata. All technical data is encrypted. If you have any
-        questions or concerns regarding privacy, feel free to contact us via
-        japodium@gmail.com.
-      </p>
+    <div class="flex w-full m-0 flex-col justify-evenly px-8">
+      <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-16">
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Your privacy is important to us. This application does not collect any
+          private information from users. However, to enhance user experience,
+          we utilize third-party analytical tools that gather anonymous data
+          about app usage, such as the number of visits, time spent on the
+          application, button clicks, and similar metrics. Additionally, by
+          clicking on certain buttons or elements within the application, users
+          may be presented with available navigation applications (the
+          application reads from the device which navigation applications are
+          installed). It is important to note that this application does not
+          collect or share your private data in these interactions. This
+          application does not require login or creation of a user account and
+          is open for use to everyone regardless of age. We use Firebase
+          Crashlytics and Firebase Performance as third-part tools to monitor
+          the stability of the application and improve performance by collecting
+          crash data. This tool gathers information such as device state at the
+          time of the crash, device type, operating system version, and similar
+          metadata. All technical data is encrypted. If you have any questions
+          or concerns regarding privacy, feel free to contact us via
+          <a class="underline" href="mailto:japodiumapp@gmail.com"
+            >japodiumapp@gmail.com</a
+          >.
+        </p>
+      </div>
+      <div class="w-full justify-self-end text-center mt-16 my-4">
+        <a
+          href="/"
+          class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light"
+          >Homepage</a
+        >
+        <p class="text-center text-sm text-gray mt-2">
+          Copyright © {new Date().getFullYear()} Japodium. All rights reserved.
+        </p>
+      </div>
     </div>
   </Container>
 </Layout>

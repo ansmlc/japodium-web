@@ -8,6 +8,12 @@ module.exports = {
         sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
     },
+    colors: {
+      "primary": "#C0A769",
+      "background": "#212121",
+      "gray-light": "#ADADAD",
+      "gray": "#7E7E7E"
+    }
   },
   plugins: [require("@tailwindcss/typography")],
 };
