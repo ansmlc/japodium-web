@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "baseUrl": "/Volumes/Workspace/japodium-web/src",
+    "baseUrl": "src",
     "strictNullChecks": true,
     "types": [
       "astro/client"
