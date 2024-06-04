@@ -1,18 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "assets/hero.png";
 import logo from "assets/japodium.svg";
 import background from "assets/japodium-bg.png";
-import playstore from "assets/google-play.svg";
-import appstore from "assets/app-store.svg";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon";
+import Download from "./download.tsx";
 ---
 
 <main class="bg-background w-full h-[100vh] m-0 relative overflow-hidden">
   <Image
     src={background}
-    alt="Astronaut in the air"
+    alt="Japodium"
     class="absolute object-contain z-30 top-0 -right-1/3 lg:right-0 h-full w-auto opacity-10"
     loading="eager"
   />
@@ -20,36 +16,13 @@ import { Icon } from "astro-icon";
     <div class="flex flex-1 items-end">
       <Image
         src={logo}
-        alt="Astronaut in the air"
+        alt="Japodium"
         widths={[200, 400, 600]}
         sizes="(max-width: 800px) 100vw, 620px"
         loading="eager"
       />
     </div>
-    <div class="flex-1 flex flex-col gap-8 justify-center max-w-xs">
-      <Link
-        href="#"
-        target="_blank"
-        class="flex items-center justify-center border-0"
-        rel="noopener">
-        <Image
-          class="max-h-[36px]"
-          src={playstore}
-          alt="Download on Google Play"
-        />
-        <Link
-          href="#"
-          target="_blank"
-          class="flex items-center justify-center border-0"
-          rel="noopener">
-          <Image
-            src={appstore}
-            class="max-h-[36px]"
-            alt="Download on App Store"
-          />
-        </Link>
-      </Link>
-    </div>
+    <Download client:load />
     <div class="w-full justify-self-end text-center my-4">
       <a
         href="/privacy"

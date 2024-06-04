@@ -5,14 +5,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat", "Inter Variable", "Inter", ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {
       "primary": "#C0A769",
       "background": "#212121",
+      "background-dark": "#121212",
       "gray-light": "#ADADAD",
-      "gray": "#7E7E7E"
+      "gray": "#7E7E7E",
+      "white": "#fff",
+      "black": "#000",
     }
   },
   plugins: [require("@tailwindcss/typography")],
