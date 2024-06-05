@@ -20,7 +20,7 @@ export default function Download() {
     <>
       <div className="flex-1 flex flex-col gap-8 justify-center max-w-xs static z-40">
         <a
-          href="#"
+          href="https://play.google.com/store/apps/details?id=japodium.android"
           target="_blank"
           className="bg-primary rounded-lg py-3 flex items-center justify-center border-0 hover:opacity-90 active:opacity-90"
           rel="noopener">
