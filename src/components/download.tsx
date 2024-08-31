@@ -36,6 +36,22 @@ export default function Download() {
           <Appstore className={"max-h-[36px]"} />
         </a>
       </div>
+      <div className="mt-4 flex flex-row items-center justify-center gap-4 w-full">
+        <a
+          className="flex items-center justify-center w-10 h-10 bg-background-dark hover:bg-background-dark/70 rounded-full"
+          href="https://www.instagram.com/japodium/"
+          target="_blank"
+          rel="noopener">
+          <img src="ig.svg" alt="Facebook" className="w-5 h-5 fill-primary" />
+        </a>
+        <a
+          className="flex items-center justify-center w-10 h-10 bg-background-dark hover:bg-background-dark/70 rounded-full"
+          href="https://www.facebook.com/japodium/"
+          target="_blank"
+          rel="noopener">
+          <img src="fb.svg" alt="Twitter" className="w-5 h-5" />
+        </a>
+      </div>
       {/* <Popup
         isOpen={isOpen}
         close={close}
