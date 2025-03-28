@@ -1,8 +1,7 @@
-const formData = require("form-data");
-const Mailgun = require("mailgun.js");
-const mailgun = new Mailgun(formData);
+import FormData from "form-data";
+import Mailgun from "mailgun.js";
 
-exports.handler = async function (event, context) {
+export const handler = async function (event, context) {
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
@@ -27,9 +26,15 @@ exports.handler = async function (event, context) {
   try {
     const body = JSON.parse(event.body);
 
+    const mailgun = new Mailgun(FormData);
     const mg = mailgun.client({
       username: "api",
-      key: process.env.MAILGUN_API_KEY,
+      key: process.env.MAILGUN_API_KEY || "",
+      // Use EU endpoint if your domain is in EU
+      url:
+        process.env.MAILGUN_EU_DOMAIN === "true"
+          ? "https://api.eu.mailgun.net"
+          : undefined,
     });
 
     const content = `<div>
@@ -47,9 +52,9 @@ exports.handler = async function (event, context) {
     </div>`;
 
     // Send email using Mailgun
-    const result = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
-      from: process.env.MAILGUN_SENDER_EMAIL,
-      to: process.env.MAILGUN_SENDER_EMAIL,
+    const result = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
+      from: process.env.MAILGUN_SENDER_EMAIL || "",
+      to: process.env.MAILGUN_SENDER_EMAIL || "",
       subject: "Reservation - Mobile App",
       html: content,
       "h:Reply-To": body.email,
