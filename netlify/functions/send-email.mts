@@ -54,7 +54,7 @@ export const handler = async function (event, context) {
     // Send email using Mailgun
     const result = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
       from: process.env.MAILGUN_SENDER_EMAIL || "",
-      to: process.env.MAILGUN_SENDER_EMAIL || "",
+      to: "anes.mulalic@outlook.com",
       subject: "Reservation - Mobile App",
       html: content,
       "h:Reply-To": body.email,
