@@ -77,15 +77,15 @@ export const handler = async function (event, context) {
         .logo {
             width: 64px;
             height: 64px;
-            background-color: #ffd700;
-            border-radius: 50%;
             margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 24px;
-            color: #1a1a1a;
+            display: block;
+        }
+        
+        .logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: block;
         }
         
         .title {
@@ -206,7 +206,9 @@ export const handler = async function (event, context) {
 <body>
     <div class="container">
         <div class="header">
-            <div class="logo">J</div>
+            <div class="logo">
+                <img src="https://japodium.com/Japodium-Logo-128.png" alt="Japodium Logo" style="width: 64px; height: 64px; border-radius: 50%; display: block;">
+            </div>
             <div class="title">Japodium</div>
         </div>
         
