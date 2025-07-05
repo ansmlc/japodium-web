@@ -269,6 +269,11 @@ export const handler = async function (event, context) {
                     <span class="detail-label">Aktivnost:</span>
                     <span class="detail-value">${body.activity || ""}</span>
                 </div>
+
+                <div class="detail-item">
+                    <span class="detail-label">Cijena po osobi:</span>
+                    <span class="detail-value">${body.price || ""} €</span>
+                </div>
             </div>
             
             ${
@@ -294,15 +299,21 @@ export const handler = async function (event, context) {
             
             <div class="message">
                 Naš tim će vas kontaktirati putem e-maila, Viber-a ili WhatsApp-a, gdje ćemo ostati u kontaktu za sva dodatna pitanja.
+
+                <strong>Politika otkazivanja:</strong>  U slučaju otkazivanja rezervacije, molimo vas da nas obavijestite najmanje 48 sati prije planirane aktivnosti. Otkazivanje unutar ovog perioda može rezultirati naplatom troškova.
+
+                Zahvaljujemo se što ste odabrali Japodium. Radujemo se vašoj avanturi i vjerujemo da ćete uživati u svemu što smo pripremili za vas!
+
+                Srdačan pozdrav,
+                Japodium tim
             </div>
         </div>
-        
         <div class="footer">
-            <div class="footer-text">
-                <strong>Politika otkazivanja:</strong> U slučaju otkazivanja rezervacije, molimo vas da nas obavijestite najmanje 24 sati prije planirane aktivnosti.
-            </div>
             <div class="contact-info">
                 Rezervacija poslana iz mobilne aplikacije
+            </div>
+            <div class="website-link">
+                <a href="https://www.japodium.com" style="color: #C0A769; text-decoration: none;">www.japodium.com</a>
             </div>
         </div>
     </div>
