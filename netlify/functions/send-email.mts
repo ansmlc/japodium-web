@@ -299,11 +299,17 @@ export const handler = async function (event, context) {
             
             <div class="message">
                 Naš tim će vas kontaktirati putem e-maila, Viber-a ili WhatsApp-a, gdje ćemo ostati u kontaktu za sva dodatna pitanja.
+            </div>
 
+            <div class="message">
                 <strong>Politika otkazivanja:</strong>  U slučaju otkazivanja rezervacije, molimo vas da nas obavijestite najmanje 48 sati prije planirane aktivnosti. Otkazivanje unutar ovog perioda može rezultirati naplatom troškova.
+            </div>
 
+            <div class="message">
                 Zahvaljujemo se što ste odabrali Japodium. Radujemo se vašoj avanturi i vjerujemo da ćete uživati u svemu što smo pripremili za vas!
+            </div>
 
+            <div class="message">
                 Srdačan pozdrav,
                 Japodium tim
             </div>
