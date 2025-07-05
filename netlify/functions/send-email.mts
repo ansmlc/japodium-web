@@ -97,7 +97,7 @@ export const handler = async function (event, context) {
         
         .subtitle {
             font-size: 16px;
-            color: #ffd700;
+            color: #C0A769;
             margin-bottom: 16px;
         }
         
@@ -129,7 +129,7 @@ export const handler = async function (event, context) {
         .section-title {
             font-size: 18px;
             font-weight: 600;
-            color: #ffd700;
+            color: #C0A769;
             margin-bottom: 16px;
         }
         
@@ -159,7 +159,7 @@ export const handler = async function (event, context) {
         }
         
         .price-section {
-            background-color: #ffd700;
+            background-color: #C0A769;
             color: #1a1a1a;
             padding: 16px 24px;
             border-radius: 8px;
@@ -213,7 +213,7 @@ export const handler = async function (event, context) {
         </div>
         
         <div class="content">
-            <div class="greeting">Pozdrav ${body.name || "Gost"}!</div>
+            <div class="greeting">Pozdrav ${body.firstName || "Gost"}!</div>
             
             <div class="message">
                 Zahvaljujemo se na vašoj rezervaciji putem Japodium aplikacije! Drago nam je da ste odabrali našu platformu za planiranje vaše avanture. <span class="emoji">😊</span>
@@ -224,7 +224,13 @@ export const handler = async function (event, context) {
                 
                 <div class="detail-item">
                     <span class="detail-label">Ime:</span>
-                    <span class="detail-value">${body.name || ""}</span>
+                    <span class="detail-value">${
+                      body.firstName || body.lastName
+                        ? `${body.firstName || ""} ${
+                            body.lastName || ""
+                          }`.trim()
+                        : ""
+                    }</span>
                 </div>
                 
                 <div class="detail-item">
@@ -263,39 +269,6 @@ export const handler = async function (event, context) {
                     <span class="detail-label">Aktivnost:</span>
                     <span class="detail-value">${body.activity || ""}</span>
                 </div>
-                
-                ${
-                  body.title
-                    ? `
-                <div class="detail-item">
-                    <span class="detail-label">Naziv:</span>
-                    <span class="detail-value">${body.title}</span>
-                </div>
-                `
-                    : ""
-                }
-                
-                ${
-                  body.description
-                    ? `
-                <div class="detail-item">
-                    <span class="detail-label">Opis:</span>
-                    <span class="detail-value">${body.description}</span>
-                </div>
-                `
-                    : ""
-                }
-                
-                ${
-                  body.message
-                    ? `
-                <div class="detail-item">
-                    <span class="detail-label">Poruka:</span>
-                    <span class="detail-value">${body.message}</span>
-                </div>
-                `
-                    : ""
-                }
             </div>
             
             ${
@@ -303,7 +276,17 @@ export const handler = async function (event, context) {
                 ? `
             <div class="price-section">
                 <div class="price-label">Ukupna cijena:</div>
-                <div class="price-value">${body.price} KM</div>
+                <div class="price-value">${(() => {
+                  const cleanPrice =
+                    typeof body.price === "string"
+                      ? parseFloat(body.price.replace(/[^\d.-]/g, "")) || 0
+                      : body.price || 0;
+                  const participants =
+                    typeof body.participants === "string"
+                      ? parseInt(body.participants.replace(/[^\d]/g, "")) || 1
+                      : body.participants || 1;
+                  return cleanPrice * participants;
+                })()} €</div>
             </div>
             `
                 : ""
