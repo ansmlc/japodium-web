@@ -263,6 +263,28 @@ export const handler = async function (event, context) {
                 </div>
                 
                 ${
+                  body.title
+                    ? `
+                <div class="detail-item">
+                    <span class="detail-label">Naziv:</span>
+                    <span class="detail-value">${body.title}</span>
+                </div>
+                `
+                    : ""
+                }
+                
+                ${
+                  body.description
+                    ? `
+                <div class="detail-item">
+                    <span class="detail-label">Opis:</span>
+                    <span class="detail-value">${body.description}</span>
+                </div>
+                `
+                    : ""
+                }
+                
+                ${
                   body.message
                     ? `
                 <div class="detail-item">
