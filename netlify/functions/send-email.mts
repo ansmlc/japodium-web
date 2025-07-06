@@ -335,7 +335,7 @@ export const handler = async function (event, context) {
     const appOwnerResult = await mg.messages.create(
       process.env.MAILGUN_DOMAIN || "",
       {
-        from: process.env.MAILGUN_SENDER_EMAIL || "",
+        from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
         to: appOwnerEmail,
         subject: "New Reservation - Mobile App",
         html: content,
@@ -347,8 +347,8 @@ export const handler = async function (event, context) {
     let userResult: any = null;
     if (body.email) {
       userResult = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
-        from: process.env.MAILGUN_SENDER_EMAIL || "",
-        to: body.email,
+        from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
+        to: "anes.mulalic@outlook.com",
         subject: "Reservation Confirmation - Japodium",
         html: content,
       });
