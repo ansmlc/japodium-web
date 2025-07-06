@@ -328,18 +328,40 @@ export const handler = async function (event, context) {
 `;
 
     // Send email using Mailgun
-    const result = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
-      from: process.env.MAILGUN_SENDER_EMAIL || "",
-      to: "anes.mulalic@outlook.com",
-      subject: "Reservation - Mobile App",
-      html: content,
-      "h:Reply-To": body.email,
-    });
+    const appOwnerEmail =
+      process.env.MAILGUN_APP_OWNER_EMAIL || "anes.mulalic@outlook.com";
+
+    // Send email to app owner (notification)
+    const appOwnerResult = await mg.messages.create(
+      process.env.MAILGUN_DOMAIN || "",
+      {
+        from: process.env.MAILGUN_SENDER_EMAIL || "",
+        to: appOwnerEmail,
+        subject: "New Reservation - Mobile App",
+        html: content,
+        "h:Reply-To": body.email,
+      }
+    );
+
+    // Send confirmation email to user if email provided
+    let userResult: any = null;
+    if (body.email) {
+      userResult = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
+        from: process.env.MAILGUN_SENDER_EMAIL || "",
+        to: body.email,
+        subject: "Reservation Confirmation - Japodium",
+        html: content,
+      });
+    }
 
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ status: "SUCCESS", id: result.id }),
+      body: JSON.stringify({
+        status: "SUCCESS",
+        appOwnerEmailId: appOwnerResult.id,
+        userEmailId: userResult?.id || null,
+      }),
     };
   } catch (error) {
     console.log("Mailgun error:", error);
