@@ -329,7 +329,7 @@ export const handler = async function (event, context) {
 
     // Send email using Mailgun
     const appOwnerEmail =
-      process.env.MAILGUN_APP_OWNER_EMAIL || "anes.mulalic@outlook.com";
+      process.env.MAILGUN_APP_OWNER_EMAIL || "info@japodium.com";
 
     // Send email to app owner (notification)
     const appOwnerResult = await mg.messages.create(
@@ -348,7 +348,7 @@ export const handler = async function (event, context) {
     if (body.email) {
       userResult = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
         from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
-        to: "anes.mulalic@outlook.com",
+        to: body.email,
         subject: "Reservation Confirmation - Japodium",
         html: content,
       });
