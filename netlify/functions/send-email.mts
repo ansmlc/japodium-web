@@ -337,7 +337,7 @@ export const handler = async function (event, context) {
       {
         from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
         to: appOwnerEmail,
-        subject: "New Reservation - Mobile App",
+        subject: "Nova rezervacija - Japodium",
         html: content,
         "h:Reply-To": body.email,
       }
@@ -349,7 +349,7 @@ export const handler = async function (event, context) {
       userResult = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
         from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
         to: body.email,
-        subject: "Reservation Confirmation - Japodium",
+        subject: "Potvrda rezervacije - Japodium",
         html: content,
       });
     }
