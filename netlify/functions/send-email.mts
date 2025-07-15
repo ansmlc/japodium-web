@@ -1,6 +1,102 @@
 import FormData from "form-data";
 import Mailgun from "mailgun.js";
 
+// Simple translations object
+const translations = {
+  bs: {
+    greeting: (name: string) => `Pozdrav ${name}!`,
+    thankYouMessage:
+      "Zahvaljujemo se na vašoj rezervaciji putem Japodium aplikacije! Drago nam je da ste odabrali našu platformu za planiranje vaše avanture.",
+    reservationDetails: "Podaci o rezervaciji:",
+    name: "Ime:",
+    email: "Email:",
+    phone: "Broj telefona:",
+    participants: "Broj učesnika:",
+    date: "Datum rezervacije:",
+    activityType: "Vrsta aktivnosti:",
+    location: "Lokacija:",
+    activity: "Aktivnost:",
+    pricePerPerson: "Cijena po osobi:",
+    totalPrice: "Ukupna cijena:",
+    contactMessage:
+      "Naš tim će vas kontaktirati putem e-maila, Viber-a ili WhatsApp-a, gdje ćemo ostati u kontaktu za sva dodatna pitanja.",
+    cancellationPolicy: "Politika otkazivanja:",
+    cancellationText:
+      "U slučaju otkazivanja rezervacije, molimo vas da nas obavijestite najmanje 48 sati prije planirane aktivnosti. Otkazivanje unutar ovog perioda može rezultirati naplatom troškova.",
+    thankYouFinal:
+      "Zahvaljujemo se što ste odabrali Japodium. Radujemo se vašoj avanturi i vjerujemo da ćete uživati u svemu što smo pripremili za vas!",
+    regards: "Srdačan pozdrav,",
+    team: "Japodium tim",
+    newReservation: "Nova rezervacija - Japodium",
+    confirmationSubject: "Potvrda rezervacije - Japodium",
+  },
+  en: {
+    greeting: (name: string) => `Hello ${name}!`,
+    thankYouMessage:
+      "Thank you for your reservation through the Japodium app! We're delighted that you've chosen our platform to plan your adventure.",
+    reservationDetails: "Reservation Details:",
+    name: "Name:",
+    email: "Email:",
+    phone: "Phone Number:",
+    participants: "Number of Participants:",
+    date: "Reservation Date:",
+    activityType: "Activity Type:",
+    location: "Location:",
+    activity: "Activity:",
+    pricePerPerson: "Price per Person:",
+    totalPrice: "Total Price:",
+    contactMessage:
+      "Our team will contact you via email, Viber, or WhatsApp, where we'll stay in touch for any additional questions.",
+    cancellationPolicy: "Cancellation Policy:",
+    cancellationText:
+      "In case of reservation cancellation, please notify us at least 48 hours before the planned activity. Cancellation within this period may result in charges.",
+    thankYouFinal:
+      "Thank you for choosing Japodium. We look forward to your adventure and believe you'll enjoy everything we've prepared for you!",
+    regards: "Best regards,",
+    team: "Japodium Team",
+    newReservation: "New Reservation - Japodium",
+    confirmationSubject: "Reservation Confirmation - Japodium",
+  },
+  de: {
+    greeting: (name: string) => `Hallo ${name}!`,
+    thankYouMessage:
+      "Vielen Dank für Ihre Reservierung über die Japodium-App! Wir freuen uns, dass Sie unsere Plattform für die Planung Ihres Abenteuers gewählt haben.",
+    reservationDetails: "Reservierungsdetails:",
+    name: "Name:",
+    email: "E-Mail:",
+    phone: "Telefonnummer:",
+    participants: "Anzahl der Teilnehmer:",
+    date: "Reservierungsdatum:",
+    activityType: "Aktivitätstyp:",
+    location: "Standort:",
+    activity: "Aktivität:",
+    pricePerPerson: "Preis pro Person:",
+    totalPrice: "Gesamtpreis:",
+    contactMessage:
+      "Unser Team wird Sie per E-Mail, Viber oder WhatsApp kontaktieren, wo wir für weitere Fragen in Kontakt bleiben.",
+    cancellationPolicy: "Stornierungsrichtlinie:",
+    cancellationText:
+      "Im Falle einer Stornierung der Reservierung bitten wir Sie, uns mindestens 48 Stunden vor der geplanten Aktivität zu benachrichtigen. Eine Stornierung innerhalb dieser Zeit kann zu Gebühren führen.",
+    thankYouFinal:
+      "Vielen Dank, dass Sie sich für Japodium entschieden haben. Wir freuen uns auf Ihr Abenteuer und glauben, dass Sie alles genießen werden, was wir für Sie vorbereitet haben!",
+    regards: "Mit freundlichen Grüßen,",
+    team: "Japodium Team",
+    newReservation: "Neue Reservierung - Japodium",
+    confirmationSubject: "Reservierungsbestätigung - Japodium",
+  },
+};
+
+function getTranslation(locale: string, key: string, ...args: any[]) {
+  const lang =
+    translations[locale as keyof typeof translations] || translations.bs;
+  const translation = lang[key as keyof typeof lang];
+
+  if (typeof translation === "function") {
+    return (translation as (...args: any[]) => string)(...args);
+  }
+  return translation || key;
+}
+
 export const handler = async function (event, context) {
   const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -26,6 +122,9 @@ export const handler = async function (event, context) {
   try {
     const body = JSON.parse(event.body);
 
+    // Get locale from request body, default to Bosnian
+    const locale = body.locale || "bs";
+
     const mailgun = new Mailgun(FormData);
     const mg = mailgun.client({
       username: "api",
@@ -37,7 +136,62 @@ export const handler = async function (event, context) {
           : undefined,
     });
 
-    const content = `
+    // Generate localized content
+    const content = generateLocalizedEmailContent(body, locale);
+
+    // Send email using Mailgun
+    const appOwnerEmail =
+      process.env.MAILGUN_APP_OWNER_EMAIL || "info@japodium.com";
+
+    // Send email to app owner (notification)
+    const appOwnerResult = await mg.messages.create(
+      process.env.MAILGUN_DOMAIN || "",
+      {
+        from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
+        to: appOwnerEmail,
+        subject: getTranslation(locale, "newReservation"),
+        html: content,
+        "h:Reply-To": body.email,
+      }
+    );
+
+    // Send confirmation email to user if email provided
+    let userResult: any = null;
+    if (body.email) {
+      userResult = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
+        from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
+        to: body.email,
+        subject: getTranslation(locale, "confirmationSubject"),
+        html: content,
+      });
+    }
+
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({
+        status: "SUCCESS",
+        appOwnerEmailId: appOwnerResult.id,
+        userEmailId: userResult?.id || null,
+      }),
+    };
+  } catch (error) {
+    console.log("Mailgun error:", error);
+    return {
+      statusCode: 500,
+      headers,
+      body: JSON.stringify({
+        status: "ERROR",
+        message: error.message,
+      }),
+    };
+  }
+};
+
+function generateLocalizedEmailContent(body: any, locale: string): string {
+  const guestName = body.firstName || "Gost";
+
+  return `
 <!DOCTYPE html>
 <html>
 <head>
@@ -213,17 +367,30 @@ export const handler = async function (event, context) {
         </div>
         
         <div class="content">
-            <div class="greeting">Pozdrav ${body.firstName || "Gost"}!</div>
+            <div class="greeting">${getTranslation(
+              locale,
+              "greeting",
+              guestName
+            )}</div>
             
             <div class="message">
-                Zahvaljujemo se na vašoj rezervaciji putem Japodium aplikacije! Drago nam je da ste odabrali našu platformu za planiranje vaše avanture. <span class="emoji">😊</span>
+                ${getTranslation(
+                  locale,
+                  "thankYouMessage"
+                )} <span class="emoji">😊</span>
             </div>
             
             <div class="details-section">
-                <div class="section-title">Podaci o rezervaciji:</div>
+                <div class="section-title">${getTranslation(
+                  locale,
+                  "reservationDetails"
+                )}</div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Ime:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "name"
+                    )}</span>
                     <span class="detail-value">${
                       body.firstName || body.lastName
                         ? `${body.firstName || ""} ${
@@ -234,44 +401,68 @@ export const handler = async function (event, context) {
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Email:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "email"
+                    )}</span>
                     <span class="detail-value">${body.email || ""}</span>
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Broj telefona:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "phone"
+                    )}</span>
                     <span class="detail-value">${body.phone || ""}</span>
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Broj učesnika:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "participants"
+                    )}</span>
                     <span class="detail-value">${body.participants || ""}</span>
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Datum rezervacije:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "date"
+                    )}</span>
                     <span class="detail-value">${body.date || ""}</span>
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Vrsta aktivnosti:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "activityType"
+                    )}</span>
                     <span class="detail-value">${body.categoryName || ""}</span>
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Lokacija:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "location"
+                    )}</span>
                     <span class="detail-value">${
                       body.cities ? body.cities.join(" - ") : ""
                     }</span>
                 </div>
                 
                 <div class="detail-item">
-                    <span class="detail-label">Aktivnost:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "activity"
+                    )}</span>
                     <span class="detail-value">${body.activity || ""}</span>
                 </div>
 
                 <div class="detail-item">
-                    <span class="detail-label">Cijena po osobi:</span>
+                    <span class="detail-label">${getTranslation(
+                      locale,
+                      "pricePerPerson"
+                    )}</span>
                     <span class="detail-value">${body.price || ""} €</span>
                 </div>
             </div>
@@ -280,7 +471,10 @@ export const handler = async function (event, context) {
               body.price
                 ? `
             <div class="price-section">
-                <div class="price-label">Ukupna cijena:</div>
+                <div class="price-label">${getTranslation(
+                  locale,
+                  "totalPrice"
+                )}</div>
                 <div class="price-value">${(() => {
                   const cleanPrice =
                     typeof body.price === "string"
@@ -298,20 +492,23 @@ export const handler = async function (event, context) {
             }
             
             <div class="message">
-                Naš tim će vas kontaktirati putem e-maila, Viber-a ili WhatsApp-a, gdje ćemo ostati u kontaktu za sva dodatna pitanja.
+                ${getTranslation(locale, "contactMessage")}
             </div>
 
             <div class="message">
-                <strong>Politika otkazivanja:</strong>  U slučaju otkazivanja rezervacije, molimo vas da nas obavijestite najmanje 48 sati prije planirane aktivnosti. Otkazivanje unutar ovog perioda može rezultirati naplatom troškova.
+                <strong>${getTranslation(
+                  locale,
+                  "cancellationPolicy"
+                )}:</strong> ${getTranslation(locale, "cancellationText")}
             </div>
 
             <div class="message">
-                Zahvaljujemo se što ste odabrali Japodium. Radujemo se vašoj avanturi i vjerujemo da ćete uživati u svemu što smo pripremili za vas!
+                ${getTranslation(locale, "thankYouFinal")}
             </div>
 
             <div class="message">
-                Srdačan pozdrav,
-                Japodium tim
+                ${getTranslation(locale, "regards")},
+                ${getTranslation(locale, "team")}
             </div>
         </div>
         <div class="footer">
@@ -326,52 +523,4 @@ export const handler = async function (event, context) {
 </body>
 </html>
 `;
-
-    // Send email using Mailgun
-    const appOwnerEmail =
-      process.env.MAILGUN_APP_OWNER_EMAIL || "info@japodium.com";
-
-    // Send email to app owner (notification)
-    const appOwnerResult = await mg.messages.create(
-      process.env.MAILGUN_DOMAIN || "",
-      {
-        from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
-        to: appOwnerEmail,
-        subject: "Nova rezervacija - Japodium",
-        html: content,
-        "h:Reply-To": body.email,
-      }
-    );
-
-    // Send confirmation email to user if email provided
-    let userResult: any = null;
-    if (body.email) {
-      userResult = await mg.messages.create(process.env.MAILGUN_DOMAIN || "", {
-        from: `Japodium <${process.env.MAILGUN_SENDER_EMAIL || ""}>`,
-        to: body.email,
-        subject: "Potvrda rezervacije - Japodium",
-        html: content,
-      });
-    }
-
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify({
-        status: "SUCCESS",
-        appOwnerEmailId: appOwnerResult.id,
-        userEmailId: userResult?.id || null,
-      }),
-    };
-  } catch (error) {
-    console.log("Mailgun error:", error);
-    return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({
-        status: "ERROR",
-        message: error.message,
-      }),
-    };
-  }
-};
+}
