@@ -20,12 +20,12 @@ const translations = {
     totalPrice: "Ukupna cijena:",
     contactMessage:
       "Naš tim će vas kontaktirati putem e-maila, Viber-a ili WhatsApp-a, gdje ćemo ostati u kontaktu za sva dodatna pitanja.",
-    cancellationPolicy: "Politika otkazivanja:",
+    cancellationPolicy: "Politika otkazivanja",
     cancellationText:
       "U slučaju otkazivanja rezervacije, molimo vas da nas obavijestite najmanje 48 sati prije planirane aktivnosti. Otkazivanje unutar ovog perioda može rezultirati naplatom troškova.",
     thankYouFinal:
       "Zahvaljujemo se što ste odabrali Japodium. Radujemo se vašoj avanturi i vjerujemo da ćete uživati u svemu što smo pripremili za vas!",
-    regards: "Srdačan pozdrav,",
+    regards: "Srdačan pozdrav",
     team: "Japodium tim",
     newReservation: "Nova rezervacija - Japodium",
     confirmationSubject: "Potvrda rezervacije - Japodium",
@@ -47,12 +47,12 @@ const translations = {
     totalPrice: "Total Price:",
     contactMessage:
       "Our team will contact you via email, Viber, or WhatsApp, where we'll stay in touch for any additional questions.",
-    cancellationPolicy: "Cancellation Policy:",
+    cancellationPolicy: "Cancellation Policy",
     cancellationText:
       "In case of reservation cancellation, please notify us at least 48 hours before the planned activity. Cancellation within this period may result in charges.",
     thankYouFinal:
       "Thank you for choosing Japodium. We look forward to your adventure and believe you'll enjoy everything we've prepared for you!",
-    regards: "Best regards,",
+    regards: "Best regards",
     team: "Japodium Team",
     newReservation: "New Reservation - Japodium",
     confirmationSubject: "Reservation Confirmation - Japodium",
@@ -74,12 +74,12 @@ const translations = {
     totalPrice: "Gesamtpreis:",
     contactMessage:
       "Unser Team wird Sie per E-Mail, Viber oder WhatsApp kontaktieren, wo wir für weitere Fragen in Kontakt bleiben.",
-    cancellationPolicy: "Stornierungsrichtlinie:",
+    cancellationPolicy: "Stornierungsrichtlinie",
     cancellationText:
       "Im Falle einer Stornierung der Reservierung bitten wir Sie, uns mindestens 48 Stunden vor der geplanten Aktivität zu benachrichtigen. Eine Stornierung innerhalb dieser Zeit kann zu Gebühren führen.",
     thankYouFinal:
       "Vielen Dank, dass Sie sich für Japodium entschieden haben. Wir freuen uns auf Ihr Abenteuer und glauben, dass Sie alles genießen werden, was wir für Sie vorbereitet haben!",
-    regards: "Mit freundlichen Grüßen,",
+    regards: "Mit freundlichen Grüßen",
     team: "Japodium Team",
     newReservation: "Neue Reservierung - Japodium",
     confirmationSubject: "Reservierungsbestätigung - Japodium",
@@ -458,17 +458,23 @@ function generateLocalizedEmailContent(body: any, locale: string): string {
                     <span class="detail-value">${body.activity || ""}</span>
                 </div>
 
+                ${
+                  body.price && body.price.toString().trim() !== ""
+                    ? `
                 <div class="detail-item">
                     <span class="detail-label">${getTranslation(
                       locale,
                       "pricePerPerson"
                     )}</span>
-                    <span class="detail-value">${body.price || ""} €</span>
+                    <span class="detail-value">${body.price} €</span>
                 </div>
+                `
+                    : ""
+                }
             </div>
             
             ${
-              body.price
+              body.price && body.price.toString().trim() !== ""
                 ? `
             <div class="price-section">
                 <div class="price-label">${getTranslation(
