@@ -10,6 +10,14 @@ import Sectionhead from "@components/sectionhead.astro";
       <Fragment slot="title">Privacy</Fragment>
       <Fragment slot="desc">Privacy Policy</Fragment>
     </Sectionhead>
+    
+    <!-- Language Navigation -->
+    <nav class="flex justify-center gap-4 mt-8" role="navigation" aria-label="Language selection">
+      <span class="text-sm text-gray-light" title="Current language: English" aria-current="page">English</span>
+      <a href="/de/privacy" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Switch to German" aria-label="View privacy policy in German">Deutsch</a>
+      <a href="/bs/privacy" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Switch to Bosnian" aria-label="View privacy policy in Bosnian">Bosanski</a>
+    </nav>
+    
     <div class="flex w-full m-0 flex-col justify-evenly px-8">
       <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-16">
         <p
@@ -26,14 +34,77 @@ import Sectionhead from "@components/sectionhead.astro";
           collect or share your private data in these interactions. This
           application does not require login or creation of a user account and
           is open for use to everyone regardless of age. We use Firebase
-          Crashlytics and Firebase Performance as third-part tools to monitor
+          Crashlytics and Firebase Performance as third-party tools to monitor
           the stability of the application and improve performance by collecting
           crash data. This tool gathers information such as device state at the
           time of the crash, device type, operating system version, and similar
-          metadata. All technical data is encrypted. If you have any questions
-          or concerns regarding privacy, feel free to contact us via
-          <a class="underline" href="mailto:japodiumapp@gmail.com"
-            >japodiumapp@gmail.com</a
+          metadata. All technical data is encrypted.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">Reservation Services</h2>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">What Information We Collect</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          When you use our reservation feature to book guided sport and recreational services (such as rafting tours, 
+          guided city tours, quad riding, etc.) from local tourist and extreme sport agencies, we collect:
+        </p>
+        <ul class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>First and last name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+        </ul>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">How We Use Your Information</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          We use your personal information exclusively to:
+        </p>
+        <ul class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Process your reservation request</li>
+          <li>Send you a confirmation email</li>
+          <li>Notify the relevant service provider about your booking</li>
+          <li>Forward your contact details to the service provider so they can communicate with you directly</li>
+        </ul>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Data Sharing and Third Parties</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Important:</strong> We act solely as an intermediary booking platform. Your personal information is shared with 
+          the licensed third-party service provider you choose to book with. Once we forward your details to the service provider, 
+          they become responsible for handling your personal data according to their own privacy practices. We do not provide 
+          any recreational services directly.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Data Security and Retention</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>No Database Storage:</strong> We do not store your personal contact information in any database. All 
+          transactional emails are encrypted during transmission. Your information is only temporarily processed to 
+          complete the reservation and forward your details to the service provider.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Anonymous Analytics</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          We collect anonymous statistical data about reservations (date, number of participants, service provider name) 
+          for analytical purposes using Firebase Analytics. This data contains no personal contact information and cannot 
+          be used to identify you.
+        </p>
+        
+          <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Your Rights</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Since we do not store your personal data, there is no stored information to access, correct, or delete. 
+          If you have concerns about how a service provider handles your data after booking, please contact them directly. 
+          For questions about our reservation process, contact us at the email below.
+        </p>
+        
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          If you have any questions or concerns regarding privacy, feel free to contact us via
+          <a class="underline" href="mailto:info@japodium.com"
+            >info@japodium.com</a
           >.
         </p>
       </div>

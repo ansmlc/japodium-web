@@ -1,0 +1,126 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Datenschutz">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Datenschutz</Fragment>
+      <Fragment slot="desc">Datenschutzrichtlinie</Fragment>
+    </Sectionhead>
+    
+    <!-- Language Navigation -->
+    <nav class="flex justify-center gap-4 mt-8" role="navigation" aria-label="Sprachauswahl">
+      <a href="/privacy" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Zu Englisch wechseln" aria-label="Datenschutzrichtlinie auf Englisch anzeigen">English</a>
+      <span class="text-sm text-gray-light" title="Aktuelle Sprache: Deutsch" aria-current="page">Deutsch</span>
+      <a href="/bs/privacy" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Zu Bosnisch wechseln" aria-label="Datenschutzrichtlinie auf Bosnisch anzeigen">Bosanski</a>
+    </nav>
+    
+    <div class="flex w-full m-0 flex-col justify-evenly px-8">
+      <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-16">
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ihre Privatsphäre ist uns wichtig. Diese Anwendung sammelt keine
+          privaten Informationen von Benutzern. Um die Benutzererfahrung zu
+          verbessern, verwenden wir jedoch Drittanbieter-Analysetools, die
+          anonyme Daten über die App-Nutzung sammeln, wie z.B. die Anzahl der
+          Besuche, die in der Anwendung verbrachte Zeit, Klicks auf Schaltflächen
+          und ähnliche Metriken. Zusätzlich können Benutzer durch Klicken auf
+          bestimmte Schaltflächen oder Elemente in der Anwendung verfügbare
+          Navigationsanwendungen angezeigt bekommen (die Anwendung liest vom
+          Gerät, welche Navigationsanwendungen installiert sind). Es ist wichtig
+          zu beachten, dass diese Anwendung Ihre privaten Daten bei diesen
+          Interaktionen nicht sammelt oder teilt. Diese Anwendung erfordert
+          keine Anmeldung oder Erstellung eines Benutzerkontos und steht jedem
+          unabhängig vom Alter zur Verfügung. Wir verwenden Firebase Crashlytics
+          und Firebase Performance als Drittanbieter-Tools zur Überwachung der
+          Stabilität der Anwendung und zur Verbesserung der Leistung durch
+          Sammlung von Absturzdaten. Dieses Tool sammelt Informationen wie den
+          Gerätezustand zum Zeitpunkt des Absturzes, Gerätetyp,
+          Betriebssystemversion und ähnliche Metadaten. Alle technischen Daten
+          sind verschlüsselt.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">Reservierungsservices</h2>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Welche Informationen wir sammeln</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wenn Sie unsere Reservierungsfunktion nutzen, um geführte Sport- und Freizeitdienste (wie Rafting-Touren, 
+          geführte Stadttouren, Quad-Fahren usw.) von lokalen Tourismus- und Extremsport-Agenturen zu buchen, sammeln wir:
+        </p>
+        <ul class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Vor- und Nachname</li>
+          <li>E-Mail-Adresse</li>
+          <li>Telefonnummer</li>
+        </ul>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Wie wir Ihre Informationen verwenden</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wir verwenden Ihre persönlichen Informationen ausschließlich für:
+        </p>
+        <ul class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Bearbeitung Ihrer Reservierungsanfrage</li>
+          <li>Zusendung einer Bestätigungs-E-Mail</li>
+          <li>Benachrichtigung des entsprechenden Dienstleisters über Ihre Buchung</li>
+          <li>Weiterleitung Ihrer Kontaktdaten an den Dienstleister, damit er direkt mit Ihnen kommunizieren kann</li>
+        </ul>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Datenweitergabe und Drittanbieter</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Wichtig:</strong> Wir fungieren ausschließlich als Vermittlungsplattform für Buchungen. Ihre persönlichen 
+          Informationen werden mit dem lizenzierten Drittanbieter-Dienstleister geteilt, den Sie für die Buchung auswählen. 
+          Sobald wir Ihre Daten an den Dienstleister weiterleiten, ist dieser für die Behandlung Ihrer persönlichen Daten 
+          gemäß seinen eigenen Datenschutzpraktiken verantwortlich. Wir bieten keine Freizeitdienste direkt an.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Datensicherheit und -aufbewahrung</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Keine Datenbankspeicherung:</strong> Wir speichern Ihre persönlichen Kontaktinformationen nicht in einer 
+          Datenbank. Alle Transaktions-E-Mails werden während der Übertragung verschlüsselt. Ihre Informationen werden nur 
+          vorübergehend verarbeitet, um die Reservierung abzuschließen und Ihre Daten an den Dienstleister weiterzuleiten.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Anonyme Analysen</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wir sammeln anonyme statistische Daten über Reservierungen (Datum, Anzahl der Teilnehmer, Name des Dienstleisters) 
+          für Analysezwecke mit Firebase Analytics. Diese Daten enthalten keine persönlichen Kontaktinformationen und können 
+          nicht zur Identifizierung verwendet werden.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Ihre Rechte</h3>
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Da wir Ihre persönlichen Daten nicht speichern, gibt es keine gespeicherten Informationen, auf die Sie zugreifen, 
+          die Sie korrigieren oder löschen könnten. Wenn Sie Bedenken darüber haben, wie ein Dienstleister nach der Buchung 
+          mit Ihren Daten umgeht, wenden Sie sich bitte direkt an ihn. Bei Fragen zu unserem Reservierungsprozess 
+          kontaktieren Sie uns unter der unten angegebenen E-Mail-Adresse.
+        </p>
+        
+        <p
+          class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wenn Sie Fragen oder Bedenken zum Datenschutz haben, kontaktieren Sie uns gerne über
+          <a class="underline" href="mailto:info@japodium.com"
+            >info@japodium.com</a
+          >.
+        </p>
+      </div>
+      <div class="w-full justify-self-end text-center mt-16 my-4">
+        <a
+          href="/"
+          class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light"
+          >Startseite</a
+        >
+        <p class="text-center text-sm text-gray mt-2">
+          Copyright © {new Date().getFullYear()} Japodium. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </Container>
+</Layout>
