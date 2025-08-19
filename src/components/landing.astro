@@ -24,15 +24,23 @@ import Download from "./download.tsx";
       />
     </div>
     <Download client:load />
-    <div class="w-full justify-self-end text-center my-4">
-      <a
-        href="/privacy"
-        class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light"
-        >Privacy Policy</a
-      >
-      <p class="text-center text-sm text-gray mt-2">
-        Copyright © {new Date().getFullYear()} Japodium. All rights reserved.
-      </p>
+    <div class="w-full justify-self-end text-center my-4 z-50">
+      <div class="w-full justify-self-end text-center mt-16 my-4">
+        <a
+          href="/"
+          class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light"
+          >Homepage</a
+        >
+        <p class="text-center text-sm text-gray mt-2">
+          <a href="/privacy" class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light">Privacy</a>
+        </p>
+        <p class="text-center text-sm text-gray mt-2">
+          <a href="/terms" class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light">Terms of Service</a>
+        </p>
+        <p class="text-center text-sm text-gray mt-2">
+          Copyright © {new Date().getFullYear()} Japodium. All rights reserved.
+        </p>
+      </div>
     </div>
   </div>
 </main>

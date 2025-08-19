@@ -1,0 +1,139 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Uslovi Korištenja">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Uslovi Korištenja</Fragment>
+      <Fragment slot="desc">Opšti Uslovi Poslovanja</Fragment>
+    </Sectionhead>
+    
+    <!-- Language Navigation -->
+    <nav class="flex justify-center gap-4 mt-8" role="navigation" aria-label="Izbor jezika">
+      <a href="/terms" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Prebaci na engleski" aria-label="Prikaži uslove korištenja na engleskom">ENG</a>
+      <a href="/de/terms" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Prebaci na njemački" aria-label="Prikaži uslove korištenja na njemačkom">DEU</a>
+      <span class="text-sm text-gray" title="Trenutni jezik: BOS" aria-current="page">BOS</span>
+    </nav>
+    
+    <div class="flex w-full m-0 flex-col justify-evenly px-8">
+      <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-4">
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">1. O našoj usluzi</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Japodium je mobilna aplikacija i website koji služi kao <strong>posrednička platforma za rezervacije</strong> 
+          koja povezuje korisnike s lokalnim turističkim agencijama, operaterima ekstremnih sportova i licenciranim vodičima 
+          koji nude rekreacijske aktivnosti kao što su rafting ture, vožnja kvadovima, iznajmljivanje bicikala, vođene ture grada i slične usluge.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">2. Važno obavještenje - Mi nismo pružalac usluga</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>VAŽNO OBAVJEŠTENJE:</strong> Japodium NE pruža, ne upravlja niti ne prodaje nikakve rekreacijske usluge, 
+          ture ili aktivnosti direktno. Mi djelujemo isključivo kao rezervacijska platforma koja olakšava kontakt između 
+          korisnika i pružalaca usluga treće strane. Sve rekreacijske aktivnosti, ture, cijene, sadržaj i ponude prikazane 
+          u našoj aplikaciji se određuju, upravljaju i pružaju isključivo od strane nezavisnih agencija i operatera treće strane.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">3. Proces rezervacije</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Kada pošaljete zahtjev za rezervaciju kroz našu aplikaciju, pokreće se sljedeći proces:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Vaši detalji rezervacije (ime, email, telefon, učesnici, datum) šalju se i vama i našem administratoru na info@japodium.com</li>
+          <li>Naš agent će vas kontaktirati samo u svrhu potvrde</li>
+          <li>Povezujemo vas direktno s relevantnim pružaocem usluga treće strane ili vodičem</li>
+          <li>Od tog trenutka, sve interakcije, dogovori i transakcije se odvijaju direktno između vas i pružaoca usluga</li>
+          <li>Japodium nije uključen u stvarno pružanje usluga, obradu plaćanja ili bilo koji aspekt vašeg iskustva</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">4. Ograničenje odgovornosti</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>NEMA ODGOVORNOSTI:</strong> Japodium, njegovi vlasnici, programeri i agenti NISU odgovorni za:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Bilo koje povrede, štete, gubitke ili nesreće koje se mogu desiti tokom bilo koje rekreacijske aktivnosti</li>
+          <li>Kvalitet, sigurnost ili stanje bilo kojih usluga koje pružaju operateri treće strane</li>
+          <li>Netačnosti u cijenama, opisima ili dostupnosti ponuđenih usluga</li>
+          <li>Otkazivanja, kašnjenja ili promjene planiranih aktivnosti</li>
+          <li>Ponašanje, kvalifikacije ili status licence pružalaca usluga treće strane</li>
+          <li>Bilo koje sporove između korisnika i pružalaca usluga</li>
+          <li>Probleme s plaćanjem, politike povraćaja novca ili finansijske transakcije s pružaocima usluga</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">5. Upozorenje o aktivnostima ekstremnih sportova</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>PRIZNAVANJE RIZIKA:</strong> Mnoge aktivnosti dostupne preko naše platforme mogu uključivati ekstremne sportove 
+          ili fizički zahtjevne aktivnosti koje nose inherentne rizike. Ove aktivnosti možda nisu prikladne za sve uzraste, 
+          nivoe fitnes-a ili osobe s određenim medicinskim stanjima. Korištenjem naše rezervacijske usluge, priznaješ da:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Učestvuješ u svim aktivnostima na vlastiti rizik</li>
+          <li>Odgovoran/na si za procjenu svoje sposobnosti i prikladnosti za bilo koju aktivnost</li>
+          <li>Treba da se posavjetuješ s medicinskim stručnjacima ako imaš zdravstvene zabrinutosti</li>
+          <li>Sljedićeš sve sigurnosne instrukcije koje pruže pružaoci usluga</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">6. Izbor pružalaca usluga</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Iako činimo razumne napore da predstavimo samo ugledne turističke agencije, sportske operatere i licencirane vodiče, 
+          ne garantujemo niti jamčimo kvalifikacije, status licence, sigurnosne standarde ili kvalitet bilo kojeg pružaoca usluga treće strane. 
+          Korisnici su odgovorni za sprovođenje vlastite procjene pružalaca usluga.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">7. Odgovornosti korisnika</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Kao korisnik naše platforme, slažeš se da ćeš:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Pružiti tačne informacije u svim zahtjevima za rezervaciju</li>
+          <li>Komunicirati direktno s pružaocima usluga o uslovima, uvjetima i plaćanjima</li>
+          <li>Pročitati i razumjeti uslove i uvjete svakog pružaoca usluga</li>
+          <li>Preuzeti punu odgovornost za svoje učešće u rezerviranim aktivnostima</li>
+          <li>Osloboditi Japodium od bilo kojih zahtjeva povezanih s tvojim korištenjem usluga treće strane</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">8. Uslovi korištenja aplikacije</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ova aplikacija se pruža besplatno samo u informativne svrhe i olakšavanje rezervacija. 
+          Aplikacija ne zahtijeva registraciju korisnika i dostupna je korisnicima svih uzrasta. 
+          Zadržavamo pravo da promijenimo ili prekisnemo uslugu u bilo kom trenutku bez obavještenja.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">9. Primjenjivo pravo</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ovi uslovi se uređuju primjenjivim lokalnim zakonima. Bilo koji sporovi koji proizilaze iz vašeg korištenja 
+          usluga treće strane moraju se riješiti direktno s relevantnim pružaocem usluga.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">10. Kontakt informacije</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Za pitanja o ovim uslovima ili našoj usluzi olakšavanja rezervacija, kontaktirajte nas na:
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>
+        </p>
+        
+        <p class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light mt-6">
+          <strong>Korištenjem naše aplikacije i rezervacijske usluge, potvrđuješ da si pročitao/la, razumio/la i složio/la se s ovim uslovima.</strong>
+        </p>
+      </div>
+      
+      <div class="w-full justify-self-end text-center mt-16 my-4">
+        <a
+          href="/"
+          class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light"
+          >Početna stranica</a
+        >
+        <p class="text-center text-sm text-gray mt-2">
+          <a href="/privacy" class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light">Privatnost</a>
+        </p>
+        <p class="text-center text-sm text-gray mt-2">
+          <a href="/terms" class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light">Uslovi korištenja</a>
+        </p>
+        <p class="text-center text-sm text-gray mt-2">
+          Autorska prava © {new Date().getFullYear()} Japodium. Sva prava zadržana.
+        </p>
+      </div>
+    </div>
+  </Container>
+</Layout>

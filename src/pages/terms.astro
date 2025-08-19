@@ -1,0 +1,139 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="Terms of Service">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Terms of Service</Fragment>
+      <Fragment slot="desc">Terms and Conditions</Fragment>
+    </Sectionhead>
+    
+    <!-- Language Navigation -->
+    <nav class="flex justify-center gap-4 mt-8" role="navigation" aria-label="Language selection">
+      <span class="text-sm text-gray" title="Current language: ENG" aria-current="page">ENG</span>
+      <a href="/de/terms" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Switch to German" aria-label="View terms in German">DEU</a>
+      <a href="/bs/terms" class="text-sm text-gray underline hover:text-gray-light transition-colors" title="Switch to Bosnian" aria-label="View terms in Bosnian">BOS</a>
+    </nav>
+    
+    <div class="flex w-full m-0 flex-col justify-evenly px-8">
+      <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-4">
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">1. About Our Service</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Japodium is a mobile application and website that serves as an <strong>intermediary booking platform</strong> 
+          connecting users with local tourist agencies, extreme sport operators, and licensed tour guides who offer 
+          recreational activities such as rafting tours, quad riding, bike rentals, guided city tours, and similar services.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">2. Important Disclaimer - We Are Not a Service Provider</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>CRITICAL NOTICE:</strong> Japodium does NOT directly provide, operate, or sell any recreational services, 
+          tours, or activities. We act solely as a reservation platform that facilitates contact between users and 
+          third-party service providers. All recreational activities, tours, pricing, content, and offers displayed 
+          in our app are determined, operated, and provided exclusively by independent third-party agencies and operators.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">3. Reservation Process</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          When you submit a reservation request through our app, the following process occurs:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Your reservation details (name, email, phone, participants, date) are sent to both you and our admin at info@japodium.com</li>
+          <li>Our agent will contact you for confirmation purposes only</li>
+          <li>We connect you directly with the relevant third-party service provider or tour guide</li>
+          <li>From that point forward, all interactions, arrangements, and transactions occur directly between you and the service provider</li>
+          <li>Japodium is not involved in the actual service delivery, payment processing, or any aspect of your experience</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">4. Limitation of Liability</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>NO LIABILITY:</strong> Japodium, its owners, developers, and agents are NOT responsible for:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Any injuries, damages, losses, or accidents that may occur during any recreational activity</li>
+          <li>The quality, safety, or condition of any services provided by third-party operators</li>
+          <li>Inaccuracies in pricing, descriptions, or availability of offered services</li>
+          <li>Cancellations, delays, or changes to scheduled activities</li>
+          <li>The conduct, qualifications, or licensing status of third-party service providers</li>
+          <li>Any disputes between users and service providers</li>
+          <li>Payment issues, refund policies, or financial transactions with service providers</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">5. Extreme Sport Activities Warning</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>RISK ACKNOWLEDGMENT:</strong> Many activities available through our platform may include extreme sports 
+          or physically challenging activities that carry inherent risks. These activities may not be appropriate for all 
+          ages, fitness levels, or individuals with certain medical conditions. By using our reservation service, you acknowledge that:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>You participate in all activities at your own risk</li>
+          <li>You are responsible for assessing your own fitness and suitability for any activity</li>
+          <li>You should consult medical professionals if you have health concerns</li>
+          <li>You will follow all safety instructions provided by the service providers</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">6. Service Provider Selection</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          While we make reasonable efforts to feature only reputable tourist agencies, sport operators, and licensed guides, 
+          we do not guarantee or warranty the qualifications, licensing status, safety standards, or quality of any third-party 
+          service provider. Users are responsible for conducting their own due diligence regarding service providers.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">7. User Responsibilities</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          As a user of our platform, you agree to:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li>Provide accurate information in all reservation requests</li>
+          <li>Communicate directly with service providers regarding terms, conditions, and payments</li>
+          <li>Read and understand the terms and conditions of each service provider</li>
+          <li>Take full responsibility for your participation in any booked activities</li>
+          <li>Release Japodium from any claims related to your use of third-party services</li>
+        </ul>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">8. App Usage Terms</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          This application is provided free of charge for informational and reservation facilitation purposes only. 
+          The app does not require user registration and is available to users of all ages. We reserve the right to 
+          modify or discontinue the service at any time without notice.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">9. Governing Law</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          These terms are governed by applicable local laws. Any disputes arising from your use of third-party services 
+          must be resolved directly with the relevant service provider.
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">10. Contact Information</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          For questions about these terms or our reservation facilitation service, contact us at:
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>
+        </p>
+        
+        <p class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light mt-6">
+          <strong>By using our app and reservation service, you acknowledge that you have read, understood, and agree to these terms.</strong>
+        </p>
+      </div>
+      
+      <div class="w-full justify-self-end text-center mt-16 my-4">
+        <a
+          href="/"
+          class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light"
+          >Homepage</a
+        >
+        <p class="text-center text-sm text-gray mt-2">
+          <a href="/privacy" class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light">Privacy</a>
+        </p>
+        <p class="text-center text-sm text-gray mt-2">
+          <a href="/terms" class="text-center text-sm text-gray underline hover:text-gray-light active:text-gray-light">Terms of Service</a>
+        </p>
+        <p class="text-center text-sm text-gray mt-2">
+          Copyright © {new Date().getFullYear()} Japodium. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </Container>
+</Layout>
