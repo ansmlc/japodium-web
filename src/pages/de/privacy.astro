@@ -2,6 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+const lastUpdated = "25. September 2026";
 ---
 
 <Layout title="Datenschutz">
@@ -20,98 +22,238 @@ import Sectionhead from "@components/sectionhead.astro";
     
     <div class="flex w-full m-0 flex-col justify-evenly px-8">
       <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-4">
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Ihre Privatsphäre ist uns wichtig. Diese Anwendung sammelt keine
-          privaten Informationen von Benutzern. Um die Benutzererfahrung zu
-          verbessern, verwenden wir jedoch Drittanbieter-Analysetools, die
-          anonyme Daten über die App-Nutzung sammeln, wie z.B. die Anzahl der
-          Besuche, die in der Anwendung verbrachte Zeit, Klicks auf Schaltflächen
-          und ähnliche Metriken. Zusätzlich können Benutzer durch Klicken auf
-          bestimmte Schaltflächen oder Elemente in der Anwendung verfügbare
-          Navigationsanwendungen angezeigt bekommen (die Anwendung liest vom
-          Gerät, welche Navigationsanwendungen installiert sind). Es ist wichtig
-          zu beachten, dass diese Anwendung Ihre privaten Daten bei diesen
-          Interaktionen nicht sammelt oder teilt. Diese Anwendung erfordert
-          keine Anmeldung oder Erstellung eines Benutzerkontos und steht jedem
-          unabhängig vom Alter zur Verfügung. Wir verwenden Firebase Crashlytics
-          und Firebase Performance als Drittanbieter-Tools zur Überwachung der
-          Stabilität der Anwendung und zur Verbesserung der Leistung durch
-          Sammlung von Absturzdaten. Dieses Tool sammelt Informationen wie den
-          Gerätezustand zum Zeitpunkt des Absturzes, Gerätetyp,
-          Betriebssystemversion und ähnliche Metadaten. Alle technischen Daten
-          sind verschlüsselt.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ihre Privatsphäre ist uns wichtig, und wir erheben so wenige personenbezogene Daten wie möglich. Sie können die App 
+          nutzen, ohne uns personenbezogene Daten mitzuteilen. Wir erheben personenbezogene Daten nur, wenn Sie eine 
+          Reservierungsanfrage senden oder sich für ein optionales Benutzerkonto entscheiden, wie unten beschrieben.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Um die App stabil zu halten und zu verbessern, verwenden wir Drittanbieter-Tools, die Nutzungs- und Diagnosedaten 
+          erfassen, etwa aufgerufene Bildschirme, Klicks auf Schaltflächen, Sitzungsdauer, Absturzberichte, Gerätemodell und 
+          Betriebssystemversion. Einige Funktionen prüfen außerdem, welche Navigationsanwendungen auf Ihrem Gerät installiert 
+          sind, damit wir sie Ihnen anbieten können; diese Prüfung findet auf Ihrem Gerät statt und das Ergebnis wird nicht an 
+          uns übermittelt.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Wir verkaufen Ihre personenbezogenen Daten nicht, wir nutzen sie nicht für Werbung, und wir führen keine 
+          automatisierte Entscheidungsfindung oder Profilbildung durch.</strong>
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">Wer wir sind</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Japodium ist eine unabhängig betriebene App, die von ihren Eigentümern betrieben wird und ihren Sitz in Bosnien und 
+          Herzegowina hat. Die Eigentümer der App sind der für die in dieser Richtlinie beschriebenen personenbezogenen Daten 
+          Verantwortliche. Bei Fragen oder Anliegen zum Datenschutz — einschließlich der Anfrage nach der vollständigen 
+          Identität und den Kontaktdaten des Verantwortlichen — erreichen Sie uns unter 
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>.
         </p>
         
         <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">Reservierungsservices</h2>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Welche Informationen wir sammeln</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
           Wenn Sie unsere Reservierungsfunktion nutzen, um geführte Sport- und Freizeitdienste (wie Rafting-Touren, 
-          geführte Stadttouren, Quad-Fahren usw.) von lokalen Tourismus- und Extremsport-Agenturen zu buchen, sammeln wir:
+          geführte Stadttouren, Quad-Fahren usw.) bei unabhängigen lokalen Tourismus- und Extremsport-Agenturen anzufragen, 
+          erheben wir:
         </p>
         <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
           <li>Vor- und Nachname</li>
           <li>E-Mail-Adresse</li>
           <li>Telefonnummer</li>
+          <li>Details der Anfrage: Aktivität, Dienstleister, gewünschtes Datum, Anzahl der Teilnehmer und indikativer Preis</li>
+          <li>Wenn Sie ein Konto erstellen: die E-Mail-Adresse sowie, sofern vorhanden, Name und Profilfoto aus Ihrem Google- oder Apple-Konto</li>
         </ul>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Beachten Sie, dass „Mit Apple anmelden" kein Profilfoto bereitstellt, und dass wir bei Nutzung der Apple-Funktion 
+          „E-Mail-Adresse verbergen" lediglich eine Weiterleitungsadresse und nicht Ihre tatsächliche E-Mail-Adresse erhalten.
+        </p>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Wie wir Ihre Informationen verwenden</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Wir verwenden Ihre persönlichen Informationen ausschließlich für:
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wir verwenden Ihre personenbezogenen Daten ausschließlich, um:
         </p>
         <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
-          <li>Bearbeitung Ihrer Reservierungsanfrage</li>
-          <li>Zusendung einer Bestätigungs-E-Mail</li>
-          <li>Benachrichtigung des entsprechenden Dienstleisters über Ihre Buchung</li>
-          <li>Weiterleitung Ihrer Kontaktdaten an den Dienstleister, damit er direkt mit Ihnen kommunizieren kann</li>
+          <li>Ihre Reservierungsanfrage zu bearbeiten und Ihnen den Eingang per E-Mail zu bestätigen</li>
+          <li>unserem Administrator die Prüfung Ihrer Anfrage und die Aktualisierung ihres Status zu ermöglichen</li>
+          <li>Sie per E-Mail, Viber oder WhatsApp zu kontaktieren, um die Details abzustimmen</li>
+          <li>Ihre Kontaktdaten an den Drittanbieter-Dienstleister weiterzuleiten, damit dieser die Aktivität direkt mit Ihnen vereinbaren kann</li>
+          <li>Ihr Konto und Ihre Reservierungshistorie zu verwalten, sofern Sie ein Konto erstellt haben</li>
+          <li>die App sicher zu halten und Abstürze sowie Leistungsprobleme zu diagnostizieren</li>
         </ul>
         
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Reservierungsstatus</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Was Sie in der App absenden, ist eine <strong>Reservierungsanfrage</strong> und keine abgeschlossene Buchung. Sie 
+          erscheint in der App als <strong>„Ausstehend"</strong>, bis unser Administrator sie geprüft hat und die Details 
+          zwischen Ihnen und dem Drittanbieter abgestimmt sind; anschließend erscheint sie als <strong>„Bestätigt"</strong>. 
+          Eine Bestätigung bedeutet, dass der Dienstleister die Details mit Ihnen vereinbart hat; sie macht Japodium nicht zur 
+          Partei der Aktivität selbst.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Rechtsgrundlage der Verarbeitung</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wenn Sie sich im Europäischen Wirtschaftsraum befinden, stützen wir uns auf die folgenden Rechtsgrundlagen der 
+          Datenschutz-Grundverordnung (DSGVO):
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li><strong>Vertragserfüllung und vorvertragliche Maßnahmen</strong> (Art. 6 Abs. 1 lit. b) — zur Bearbeitung Ihrer Reservierungsanfrage und deren Weiterleitung an den Dienstleister. Diese Daten sind erforderlich; ohne sie können wir keine Anfrage bearbeiten.</li>
+          <li><strong>Einwilligung</strong> (Art. 6 Abs. 1 lit. a) — für das optionale Benutzerkonto sowie für Analyse und Absturzberichte. Sie können Ihre Einwilligung jederzeit widerrufen.</li>
+          <li><strong>Unsere berechtigten Interessen</strong> (Art. 6 Abs. 1 lit. f) — um den Dienst sicher zu halten und Missbrauch zu verhindern.</li>
+        </ul>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Bevor Sie eine Reservierungsanfrage absenden oder Ihre Kontoinformationen aktualisieren, müssen Sie ein Kästchen 
+          ankreuzen, mit dem Sie bestätigen, diese Datenschutzrichtlinie und unsere 
+          <a class="underline" href="/de/tos">Nutzungsbedingungen</a> gelesen zu haben. Dieses Häkchen dokumentiert, dass Sie 
+          informiert wurden; es ist nicht die Rechtsgrundlage für die Bearbeitung Ihrer Reservierung, die auf den oben 
+          genannten Grundlagen beruht.
+        </p>
+        
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Datenweitergabe und Drittanbieter</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          <strong>Wichtig:</strong> Wir fungieren ausschließlich als Vermittlungsplattform für Buchungen. Ihre persönlichen 
-          Informationen werden mit dem lizenzierten Drittanbieter-Dienstleister geteilt, den Sie für die Buchung auswählen. 
-          Sobald wir Ihre Daten an den Dienstleister weiterleiten, ist dieser für die Behandlung Ihrer persönlichen Daten 
-          gemäß seinen eigenen Datenschutzpraktiken verantwortlich. Wir bieten keine Freizeitdienste direkt an.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Wichtig:</strong> Wir fungieren ausschließlich als Vermittlungsplattform für Buchungen. Ihre Kontaktdaten 
+          werden an den unabhängigen Drittanbieter-Dienstleister weitergegeben, den Sie auswählen. Sobald wir Ihre Daten 
+          weiterleiten, wird dieser Dienstleister zum eigenständigen Verantwortlichen für Ihre personenbezogenen Daten gemäß 
+          seinen eigenen Datenschutzpraktiken. Wir bieten selbst keine Freizeitdienste an.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Von uns eingesetzte Auftragsverarbeiter</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wir setzen die folgenden Auftragsverarbeiter ein, die personenbezogene Daten ausschließlich nach unseren Weisungen 
+          verarbeiten:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li><strong>Mailgun</strong> (Sinch) — Versand von Transaktions-E-Mails</li>
+          <li><strong>Netlify</strong> — Hosting unserer Website und der Funktion, die Reservierungs-E-Mails versendet</li>
+          <li><strong>Render</strong> — Hosting unseres Content-Management-Systems (Strapi)</li>
+          <li><strong>Google Firebase</strong> — Analyse, Absturzberichte und Leistungsüberwachung</li>
+          <li><strong>Google und Apple</strong> — Anmeldung, nur wenn Sie ein Konto erstellen</li>
+          <li><strong>WhatsApp</strong> (Meta) und <strong>Viber</strong> (Rakuten) — nur wenn wir Sie über diese Apps kontaktieren</li>
+        </ul>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Optionale Benutzerkonten</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Sie können optional ein kostenloses Konto erstellen, indem Sie sich mit Ihrem bestehenden Google- oder Apple-Konto 
+          anmelden. Ein Konto ist für Reservierungsanfragen nicht erforderlich — es ermöglicht Ihnen lediglich, Ihre Anfragen 
+          einfacher zu erstellen und zu verwalten.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Was wir speichern:</strong> Wenn Sie sich anmelden, erstellen wir ein Profil in unserem 
+          Content-Management-System (Strapi, gehostet auf Render) mit Informationen aus Ihrem Google- oder Apple-Konto, wie 
+          Ihrer E-Mail-Adresse und, sofern verfügbar, Ihrem Profilfoto. Im Tab „Konto" können Sie jederzeit Ihren Vor- und 
+          Nachnamen, Ihre Telefonnummer und Ihre E-Mail-Adresse hinzufügen oder aktualisieren.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Vorausgefüllte Anfragen:</strong> Wenn Sie angemeldet sind, werden Ihre gespeicherten Kontaktdaten 
+          automatisch eingetragen. Da eine Anfrage nicht ohne vollständigen Namen, E-Mail-Adresse und Telefonnummer abgeschickt 
+          werden kann, werden fehlende Angaben, die Sie im Formular eingeben, ebenfalls in Ihrem Konto gespeichert, damit Sie 
+          sie nicht erneut eingeben müssen.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Als Gast fortfahren:</strong> Sie können eine Anfrage jederzeit ohne Konto senden, indem Sie „Als Gast 
+          fortfahren" wählen. In diesem Fall erstellen wir kein Kontoprofil und speichern keinen Datenbankeintrag über Sie — 
+          beachten Sie jedoch den Abschnitt „Datensicherheit und -aufbewahrung" unten, da eine Kopie in den 
+          Reservierungs-E-Mails verbleibt.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Ihre Reservierungen:</strong> Wenn Sie angemeldet eine Anfrage senden, erscheinen Ihre Anfragen und deren 
+          Details (einschließlich Ihrer Kontaktinformationen und des aktuellen Status) im Tab „Reservierungen". Sie können jede 
+          bevorstehende Reservierung jederzeit stornieren. Ein Datensatz stornierter Reservierungen bleibt in unserer Datenbank 
+          gespeichert und mit Ihrem Konto verknüpft, es sei denn, Sie löschen Ihr Konto.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Konto bearbeiten oder löschen:</strong> Sie können Ihre persönlichen Daten jederzeit im Tab „Konto" 
+          bearbeiten oder Ihr Konto dauerhaft löschen. Sie können die Löschung auch per E-Mail an 
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a> anfordern.
         </p>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Datensicherheit und -aufbewahrung</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          <strong>Keine Datenbankspeicherung:</strong> Wir speichern Ihre persönlichen Kontaktinformationen nicht in einer 
-          Datenbank. Alle Transaktions-E-Mails werden während der Übertragung verschlüsselt. Ihre Informationen werden nur 
-          vorübergehend verarbeitet, um die Reservierung abzuschließen und Ihre Daten an den Dienstleister weiterzuleiten.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Anfragen als Gast:</strong> Wir speichern Ihre Daten nicht in unserer Datenbank. Die Anfrage wird jedoch per 
+          E-Mail an Sie und an unseren Administrator gesendet, sodass eine Kopie in unserem Postfach und für kurze Zeit in den 
+          Versandprotokollen von Mailgun vorliegt. Kopien im Administrator-Postfach löschen wir nach 12 Monaten oder auf 
+          Anfrage früher.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Anfragen mit Konto:</strong> Wenn Sie angemeldet sind, werden Ihr Profil und Ihre Reservierungsdatensätze in 
+          unserem Content-Management-System (Strapi, gehostet auf Render) gespeichert, bis Sie diese oder Ihr Konto löschen. 
+          Die Löschung entfernt die Daten unmittelbar aus der aktiven Datenbank; verbleibende Kopien in verschlüsselten 
+          Sicherungen werden innerhalb von 90 Tagen entfernt.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Sicherheit:</strong> Alle Daten werden bei der Übertragung mittels TLS verschlüsselt, und der Zugang zu 
+          unserem Content-Management-System ist auf autorisierte Administratoren beschränkt.
         </p>
         
-        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Anonyme Analysen</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Wir sammeln anonyme statistische Daten über Reservierungen (Datum, Anzahl der Teilnehmer, Name des Dienstleisters) 
-          für Analysezwecke mit Firebase Analytics. Diese Daten enthalten keine persönlichen Kontaktinformationen und können 
-          nicht zur Identifizierung verwendet werden.
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Analyse und Absturzberichte</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wir verwenden Firebase Analytics, Firebase Crashlytics und Firebase Performance Monitoring. Diese erfassen Nutzungs- 
+          und Diagnosedaten zusammen mit Identifikatoren wie einer App-Instanz-ID, Gerätemodell, Betriebssystemversion und 
+          IP-Adresse sowie Statistiken zu Reservierungen (Datum, Anzahl der Teilnehmer, Name des Dienstleisters). Diese Daten 
+          sind <strong>pseudonym und nicht vollständig anonym</strong> — sie sind nicht mit Ihrem Namen verknüpft, aber auch 
+          nicht vollständig anonym, weshalb wir sie als personenbezogene Daten behandeln. Sie können Ihre Einwilligung zur 
+          Analyse jederzeit widerrufen, indem Sie uns unter 
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a> kontaktieren.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Internationale Datenübermittlung</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Einige unserer Auftragsverarbeiter haben ihren Sitz außerhalb des Europäischen Wirtschaftsraums, überwiegend in den 
+          Vereinigten Staaten. Soweit personenbezogene Daten außerhalb des EWR übermittelt werden, stützen wir uns auf die 
+          Standardvertragsklauseln der Europäischen Kommission oder, sofern anwendbar, auf einen Angemessenheitsbeschluss wie 
+          das EU-US-Datenschutzrahmenwerk. Details zu den geltenden Garantien können Sie bei uns erfragen.
         </p>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Ihre Rechte</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Da wir Ihre persönlichen Daten nicht speichern, gibt es keine gespeicherten Informationen, auf die Sie zugreifen, 
-          die Sie korrigieren oder löschen könnten. Wenn Sie Bedenken darüber haben, wie ein Dienstleister nach der Buchung 
-          mit Ihren Daten umgeht, wenden Sie sich bitte direkt an ihn. Bei Fragen zu unserem Reservierungsprozess 
-          kontaktieren Sie uns unter der unten angegebenen E-Mail-Adresse.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wenn Sie sich im Europäischen Wirtschaftsraum befinden, haben Sie das Recht, Auskunft über Ihre personenbezogenen 
+          Daten zu verlangen sowie deren Berichtigung, Löschung, Einschränkung der Verarbeitung oder Übertragbarkeit. Sie 
+          können außerdem der Verarbeitung auf Grundlage unserer berechtigten Interessen widersprechen und eine erteilte 
+          Einwilligung jederzeit widerrufen.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wenn Sie ein Konto haben, können Sie die meisten dieser Rechte direkt im Tab „Konto" ausüben, wo Sie Ihre Daten 
+          einsehen, korrigieren und dauerhaft löschen können. Andernfalls schreiben Sie uns an 
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>; wir antworten innerhalb eines Monats. 
+          Wenn Sie eine Anfrage als Gast gesendet haben, liegt kein Datenbankeintrag vor, wir können jedoch die Kopie in 
+          unserem Postfach auf Anfrage löschen.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Sie haben zudem das Recht, bei Ihrer örtlichen Datenschutzaufsichtsbehörde Beschwerde einzulegen. In Bosnien und 
+          Herzegowina ist dies die Agentur für den Schutz personenbezogener Daten (Agencija za zaštitu ličnih podataka u Bosni 
+          i Hercegovini). Wenn Sie Bedenken darüber haben, wie ein Dienstleister nach der Buchung mit Ihren Daten umgeht, 
+          wenden Sie sich bitte direkt an ihn.
         </p>
         
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Kinder</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Die App ist mit 4+ eingestuft und kann von jedem heruntergeladen und durchsucht werden. Wir erheben nicht bewusst 
+          personenbezogene Daten von Kindern, und die App richtet sich nicht an sie. Wenn Sie minderjährig sind, sollte ein 
+          Elternteil oder Erziehungsberechtigter die Reservierungsanfrage in Ihrem Namen senden und die Einzelheiten mit dem 
+          Dienstleister vereinbaren. Wenn Sie glauben, dass ein Kind uns personenbezogene Daten übermittelt hat, kontaktieren 
+          Sie uns und wir löschen sie.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Datenschutzverletzungen</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Sollte eine Verletzung des Schutzes personenbezogener Daten eintreten, die wahrscheinlich ein Risiko für Ihre Rechte 
+          und Freiheiten darstellt, benachrichtigen wir die zuständige Aufsichtsbehörde innerhalb von 72 Stunden und 
+          informieren Sie unverzüglich, soweit wir dazu verpflichtet sind.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Änderungen dieser Richtlinie</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Das Datum unten zeigt, wann sie zuletzt geändert wurde; 
+          bei einer wesentlichen Änderung informieren wir Sie in der App, bevor sie wirksam wird.
+        </p>
+        
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light mt-4">
           Wenn Sie Fragen oder Bedenken zum Datenschutz haben, kontaktieren Sie uns gerne über
           <a class="underline" href="mailto:info@japodium.com"
             >info@japodium.com</a
           >.
         </p>
-        <p class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light mt-6">
-          <strong>Durch die Nutzung unserer App und unserer Reservierungsdienste erklären Sie sich damit einverstanden, dass Sie diese Bedingungen gelesen, verstanden und akzeptiert haben.</strong>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray mt-6">
+          Letzte Aktualisierung: {lastUpdated}
         </p>
       </div>
       <div class="w-full justify-self-end text-center mt-16 my-4">

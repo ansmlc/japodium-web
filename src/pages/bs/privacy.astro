@@ -2,6 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+
+const lastUpdated = "25. septembar 2026.";
 ---
 
 <Layout title="Privatnost">
@@ -20,94 +22,225 @@ import Sectionhead from "@components/sectionhead.astro";
     
     <div class="flex w-full m-0 flex-col justify-evenly px-8">
       <div class="flex flex-1 flex-col gap-3 mx-auto max-w-4xl mt-4">
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Vaša privatnost je važna za nas. Ova aplikacija ne prikuplja nikakve
-          privatne informacije od korisnika. Međutim, radi poboljšanja korisničkog
-          iskustva, koristimo analitičke alate treće strane koji prikupljaju
-          anonimne podatke o korištenju aplikacije, kao što su broj posjeta,
-          vrijeme provedeno u aplikaciji, klikovi na dugmad i slične metrike.
-          Dodatno, klikom na određena dugmad ili elemente u aplikaciji, korisnicima
-          se mogu prikazati dostupne navigacijske aplikacije (aplikacija čita s
-          uređaja koje su navigacijske aplikacije instalirane). Važno je napomenuti
-          da ova aplikacija ne prikuplja niti dijeli vaše privatne podatke u ovim
-          interakcijama. Ova aplikacija ne zahtijeva prijavu ili kreiranje
-          korisničkog računa i otvorena je za korištenje svima bez obzira na
-          godine. Koristimo Firebase Crashlytics i Firebase Performance kao alate
-          treće strane za praćenje stabilnosti aplikacije i poboljšanje performansi
-          prikupljanjem podataka o rušenju. Ovaj alat prikuplja informacije kao što
-          su stanje uređaja u vrijeme rušenja, tip uređaja, verzija operativnog
-          sistema i slični metapodaci. Svi tehnički podaci su enkriptovani.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Vaša privatnost je važna za nas i prikupljamo što je manje moguće ličnih podataka. Aplikaciju možete pregledavati 
+          bez davanja ikakvih ličnih informacija. Lične podatke prikupljamo samo kada pošaljete zahtjev za rezervaciju ili 
+          kada odlučite kreirati opcionalni korisnički račun, kako je objašnjeno ispod.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Kako bismo aplikaciju održali stabilnom i poboljšali je, koristimo alate treće strane koji prikupljaju podatke o 
+          korištenju i dijagnostici, kao što su pregledani ekrani, klikovi na dugmad, trajanje sesije, izvještaji o rušenju, 
+          model uređaja i verzija operativnog sistema. Neke funkcije također provjeravaju koje su navigacijske aplikacije 
+          instalirane na vašem uređaju kako bismo vam ih mogli ponuditi; ta provjera se odvija na vašem uređaju i rezultat 
+          nam se ne šalje.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Ne prodajemo vaše lične podatke, ne koristimo ih za reklamiranje i ne vršimo automatizovano odlučivanje 
+          niti profilisanje.</strong>
+        </p>
+        
+        <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">Ko smo mi</h2>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Japodium je samostalno vođena aplikacija kojom upravljaju njeni vlasnici, sa sjedištem u Bosni i Hercegovini. 
+          Vlasnici aplikacije su kontrolor podataka odgovoran za lične podatke opisane u ovoj politici. Za bilo koje pitanje 
+          ili zahtjev u vezi s privatnošću — uključujući zahtjev za potpunim identitetom i kontakt podacima kontrolora — 
+          kontaktirajte nas na <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>.
         </p>
         
         <h2 class="text-2xl font-semibold mt-8 mb-2 text-gray-light">Rezervacijske Usluge</h2>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Koje informacije prikupljamo</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Kada koristite našu rezervacijsku funkciju za rezervaciju vođenih sportskih i rekreacijskih usluga (kao što su 
-          rafting ture, vođene ture grada, vožnja kvadovima, itd.) od lokalnih turističkih i ekstremnih sportskih agencija, prikupljamo:
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Kada koristite našu rezervacijsku funkciju da zatražite vođene sportske i rekreacijske usluge (kao što su 
+          rafting ture, vođene ture grada, vožnja kvadovima, itd.) od nezavisnih lokalnih turističkih i ekstremnih sportskih 
+          agencija, prikupljamo:
         </p>
         <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
           <li>Ime i prezime</li>
           <li>Email adresu</li>
           <li>Broj telefona</li>
+          <li>Detalje zahtjeva: aktivnost, pružaoca usluge, željeni datum, broj učesnika i okvirnu cijenu</li>
+          <li>Ako kreirate račun: email adresu i, ako su dostupni, ime i profilnu fotografiju s vašeg Google ili Apple računa</li>
         </ul>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Napominjemo da prijava putem Apple računa ne pruža profilnu fotografiju, a ako koristite Appleovu opciju 
+          „Hide My Email", dobijamo samo posredničku adresu, a ne vašu stvarnu email adresu.
+        </p>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Kako koristimo vaše informacije</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Vaše lične informacije koristimo isključivo za:
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Vaše lične informacije koristimo samo za:
         </p>
         <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
-          <li>Obradu vašeg zahtjeva za rezervaciju</li>
-          <li>Slanje potvrde emailom</li>
-          <li>Obavještavanje relevantnog pružaoca usluga o vašoj rezervaciji</li>
-          <li>Prosljeđivanje vaših kontakt podataka pružaocu usluga kako bi mogli direktno komunicirati s vama</li>
+          <li>Obradu vašeg zahtjeva za rezervaciju i slanje emaila o prijemu zahtjeva</li>
+          <li>Omogućavanje našem administratoru da pregleda vaš zahtjev i ažurira njegov status</li>
+          <li>Kontaktiranje vas putem emaila, Viber-a ili WhatsApp-a radi usklađivanja detalja zahtjeva</li>
+          <li>Prosljeđivanje vaših kontakt podataka pružaocu usluge treće strane kako bi mogao direktno s vama dogovoriti aktivnost</li>
+          <li>Održavanje vašeg računa i historije rezervacija, ako ste odlučili kreirati račun</li>
+          <li>Održavanje sigurnosti aplikacije i dijagnostiku rušenja i problema s performansama</li>
         </ul>
         
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Status rezervacije</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ono što šaljete putem aplikacije je <strong>zahtjev za rezervaciju</strong>, a ne završena rezervacija. U aplikaciji 
+          se prikazuje sa statusom <strong>„Na čekanju"</strong> dok ga naš administrator ne pregleda i dok se detalji ne 
+          usklade između vas i pružaoca usluge treće strane, nakon čega se prikazuje kao <strong>„Potvrđeno"</strong>. 
+          Potvrda znači da je pružalac usluge s vama dogovorio detalje; ona ne čini Japodium stranom u samoj aktivnosti.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Pravni osnov za obradu</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ako se nalazite u Evropskom ekonomskom prostoru, oslanjamo se na sljedeće pravne osnove prema Općoj uredbi o 
+          zaštiti podataka (GDPR):
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li><strong>Izvršenje ugovora i radnje koje mu prethode</strong> (čl. 6(1)(b)) — za obradu vašeg zahtjeva za rezervaciju i njegovo prosljeđivanje pružaocu usluge. Ovi podaci su neophodni; bez njih ne možemo obraditi zahtjev.</li>
+          <li><strong>Saglasnost</strong> (čl. 6(1)(a)) — za opcionalni korisnički račun te za analitiku i izvještavanje o rušenju. Saglasnost možete povući u bilo kojem trenutku.</li>
+          <li><strong>Naši legitimni interesi</strong> (čl. 6(1)(f)) — za održavanje sigurnosti usluge i sprječavanje zloupotrebe.</li>
+        </ul>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Prije nego što pošaljete zahtjev za rezervaciju ili ažurirate podatke svog računa, morate označiti polje kojim 
+          potvrđujete da ste pročitali ovu Politiku privatnosti i naše 
+          <a class="underline" href="/bs/tos">Uslove korištenja</a>. Ta potvrda bilježi da ste informisani; ona nije pravni 
+          osnov za obradu vaše rezervacije, koja se zasniva na gore navedenim osnovama.
+        </p>
+        
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Dijeljenje podataka i treće strane</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          <strong>Važno:</strong> Mi djelujemo isključivo kao posrednička platforma za rezervacije. Vaše lične informacije se 
-          dijele s licenciranim pružaocem usluga treće strane kojeg odaberete za rezervaciju. Kada proslijedimo vaše podatke 
-          pružaocu usluga, oni postaju odgovorni za rukovanje vašim ličnim podacima prema svojoj politici privatnosti. 
-          Mi ne pružamo nikakve rekreacijske usluge direktno.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Važno:</strong> Mi djelujemo isključivo kao posrednička platforma za rezervacije. Vaši kontakt podaci se 
+          dijele s nezavisnim pružaocem usluge treće strane kojeg odaberete. Kada proslijedimo vaše podatke, taj pružalac 
+          usluge postaje samostalni kontrolor odgovoran za vaše lične podatke prema svojoj politici privatnosti. 
+          Mi sami ne pružamo nikakve rekreacijske usluge.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Obrađivači koje koristimo</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Koristimo sljedeće obrađivače, koji lične podatke obrađuju samo po našim uputama:
+        </p>
+        <ul class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light ml-6 mt-2 list-disc">
+          <li><strong>Mailgun</strong> (Sinch) — slanje transakcijskih emailova</li>
+          <li><strong>Netlify</strong> — hosting naše web stranice i funkcije koja šalje rezervacijske emailove</li>
+          <li><strong>Render</strong> — hosting našeg sistema za upravljanje sadržajem (Strapi)</li>
+          <li><strong>Google Firebase</strong> — analitika, izvještavanje o rušenju i praćenje performansi</li>
+          <li><strong>Google i Apple</strong> — prijava, samo ako odlučite kreirati račun</li>
+          <li><strong>WhatsApp</strong> (Meta) i <strong>Viber</strong> (Rakuten) — samo ako vas kontaktiramo putem tih aplikacija</li>
+        </ul>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Opcionalni korisnički računi</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Možete opcionalno kreirati besplatan račun prijavom putem vašeg postojećeg Google ili Apple računa. Račun nije 
+          potreban za slanje zahtjeva za rezervaciju — on vam samo omogućava da lakše kreirate i upravljate svojim zahtjevima.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Šta čuvamo:</strong> Kada se prijavite, kreiramo profil u našem sistemu za upravljanje sadržajem (Strapi, 
+          hostovan na Renderu) koristeći informacije s vašeg Google ili Apple računa, kao što su vaša email adresa i, ako je 
+          dostupna, profilna fotografija. U kartici „Račun" u bilo kojem trenutku možete dodati ili ažurirati svoje ime i 
+          prezime, broj telefona i email adresu.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Unaprijed popunjeni zahtjevi:</strong> Ako ste prijavljeni, vaši sačuvani kontakt podaci se automatski 
+          popunjavaju. Pošto se zahtjev ne može poslati bez punog imena, email adrese i broja telefona, svi nedostajući podaci 
+          koje unesete u obrazac takođe se čuvaju na vašem računu, kako ih ne biste morali ponovo unositi.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Nastavak kao gost:</strong> Zahtjev uvijek možete poslati bez računa odabirom opcije „Nastavi kao gost". 
+          U tom slučaju ne kreiramo profil računa i ne čuvamo zapis o vama u bazi podataka — ali pogledajte odjeljak 
+          „Sigurnost i čuvanje podataka" ispod, jer kopija i dalje postoji u emailovima o rezervaciji.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Vaše rezervacije:</strong> Kada pošaljete zahtjev dok ste prijavljeni, vaši zahtjevi i njihovi detalji 
+          (uključujući vaše kontakt informacije i trenutni status) pojavljuju se u kartici „Rezervacije". Možete otkazati bilo 
+          koju predstojeću rezervaciju u bilo kojem trenutku. Zapis o otkazanim rezervacijama ostaje sačuvan u našoj bazi 
+          podataka, povezan s vašim računom, osim ako ne obrišete svoj račun.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Uređivanje ili brisanje računa:</strong> Svoje lične podatke možete urediti ili trajno obrisati svoj račun 
+          u bilo kojem trenutku u kartici „Račun". Brisanje možete zatražiti i putem emaila 
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>.
         </p>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Sigurnost i čuvanje podataka</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          <strong>Bez čuvanja u bazi podataka:</strong> Ne čuvamo vaše lične kontakt informacije u bilo kojoj bazi podataka. 
-          Svi transakcijski emailovi su enkriptovani tokom prenosa. Vaše informacije se obrađuju samo privremeno da bi se 
-          završila rezervacija i proslijedili vaši podaci pružaocu usluga.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Zahtjevi kao gost:</strong> Vaše podatke ne čuvamo u našoj bazi podataka. Međutim, zahtjev se emailom šalje 
+          vama i našem administratoru, pa kopija postoji u našem poštanskom sandučetu i, kraće vrijeme, u Mailgun-ovim 
+          zapisima o slanju. Kopije iz administratorskog sandučeta brišemo nakon 12 mjeseci, ili ranije na zahtjev.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Zahtjevi putem računa:</strong> Ako ste prijavljeni, vaš profil i zapisi o rezervacijama čuvaju se u našem 
+          sistemu za upravljanje sadržajem (Strapi, hostovan na Renderu) sve dok ih ne obrišete ili dok ne obrišete svoj račun. 
+          Brisanjem se podaci odmah uklanjaju iz aktivne baze podataka, a preostale kopije u enkriptovanim sigurnosnim 
+          kopijama uklanjaju se u roku od 90 dana.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          <strong>Sigurnost:</strong> Svi podaci su enkriptovani tokom prenosa korištenjem TLS-a, a pristup našem sistemu za 
+          upravljanje sadržajem ograničen je na ovlaštene administratore.
         </p>
         
-        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Anonimna analitika</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Prikupljamo anonimne statističke podatke o rezervacijama (datum, broj učesnika, ime pružaoca usluga) 
-          za analitičke svrhe koristeći Firebase Analytics. Ovi podaci ne sadrže lične kontakt informacije i ne mogu 
-          se koristiti za vašu identifikaciju.
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Analitika i izvještavanje o rušenju</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Koristimo Firebase Analytics, Firebase Crashlytics i Firebase Performance Monitoring. Ovi alati prikupljaju podatke 
+          o korištenju i dijagnostici zajedno s identifikatorima kao što su ID instance aplikacije, model uređaja, verzija 
+          operativnog sistema i IP adresa, kao i statistiku o rezervacijama (datum, broj učesnika, ime pružaoca usluge). 
+          Ovi podaci su <strong>pseudonimizovani, a ne potpuno anonimni</strong> — nisu povezani s vašim imenom, ali nisu ni 
+          potpuno anonimni, pa ih tretiramo kao lične podatke. Saglasnost za analitiku možete povući u bilo kojem trenutku 
+          kontaktiranjem na <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a>.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Međunarodni prenos podataka</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Neki od naših obrađivača nalaze se izvan Evropskog ekonomskog prostora, prvenstveno u Sjedinjenim Američkim 
+          Državama. Kada se lični podaci prenose izvan EEP-a, oslanjamo se na Standardne ugovorne klauzule Evropske komisije 
+          ili, gdje je primjenjivo, na odluku o adekvatnosti kao što je Okvir EU–SAD za zaštitu podataka. Detalje o zaštitnim 
+          mjerama koje se primjenjuju možete zatražiti od nas.
         </p>
         
         <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Vaša prava</h3>
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
-          Pošto ne čuvamo vaše lične podatke, nema sačuvanih informacija kojima možete pristupiti, ispraviti ili obrisati. 
-          Ako imate zabrinutosti o tome kako pružalac usluga rukuje vašim podacima nakon rezervacije, molimo kontaktirajte 
-          ih direktno. Za pitanja o našem procesu rezervacije, kontaktirajte nas na email ispod.
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ako se nalazite u Evropskom ekonomskom prostoru, imate pravo zatražiti pristup svojim ličnim podacima, kao i njihov 
+          ispravak, brisanje, ograničenje obrade ili prenosivost. Također se možete usprotiviti obradi zasnovanoj na našim 
+          legitimnim interesima i u bilo kojem trenutku povući svaku datu saglasnost.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ako imate račun, većinu ovih prava možete ostvariti direktno u kartici „Račun", gdje možete pregledati, ispraviti i 
+          trajno obrisati svoje podatke. U suprotnom, pišite nam na 
+          <a class="underline" href="mailto:info@japodium.com">info@japodium.com</a> i odgovorit ćemo u roku od jednog mjeseca. 
+          Ako ste zahtjev poslali kao gost, ne čuvamo zapis u bazi podataka, ali na vaš zahtjev možemo obrisati kopiju iz našeg 
+          poštanskog sandučeta.
+        </p>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Također imate pravo podnijeti pritužbu svom lokalnom nadzornom organu za zaštitu podataka. U Bosni i Hercegovini to 
+          je Agencija za zaštitu ličnih podataka u Bosni i Hercegovini. Ako imate zabrinutosti o tome kako pružalac usluge 
+          rukuje vašim podacima nakon rezervacije, molimo kontaktirajte ga direktno.
         </p>
         
-        <p
-          class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Djeca</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Aplikacija je ocijenjena sa 4+ i može je preuzeti i pregledavati svako. Svjesno ne prikupljamo lične podatke od djece 
+          i aplikacija nije usmjerena na njih. Ako ste maloljetni, zahtjev za rezervaciju u vaše ime treba poslati roditelj ili 
+          staratelj i s pružaocem usluge dogovoriti detalje. Ako smatrate da nam je dijete dalo lične podatke, kontaktirajte nas 
+          i obrisat ćemo ih.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Povrede podataka</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ako dođe do povrede ličnih podataka koja će vjerovatno predstavljati rizik za vaša prava i slobode, obavijestit ćemo 
+          nadležni nadzorni organ u roku od 72 sata i bez nepotrebnog odlaganja informisati vas kada smo to obavezni učiniti.
+        </p>
+        
+        <h3 class="text-xl text-gray-light font-semibold mt-2 mb-1">Izmjene ove politike</h3>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light">
+          Ovu politiku možemo s vremena na vrijeme ažurirati. Datum ispod pokazuje kada je posljednji put izmijenjena, a ako 
+          napravimo značajnu izmjenu, obavijestit ćemo vas u aplikaciji prije nego što stupi na snagu.
+        </p>
+        
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray-light mt-4">
           Ako imate bilo kakva pitanja ili zabrinutosti vezane za privatnost, slobodno nas kontaktirajte preko
           <a class="underline" href="mailto:info@japodium.com"
             >info@japodium.com</a
           >.
         </p>
-        <p class="text-md text-center lg:text-left leading-relaxed text-slate-500 text-gray-light mt-6">
-          <strong>Korištenjem naše aplikacije i rezervacijske usluge, prihvatate da ste pročitali, razumjeli i prihvatili ove uvjete.</strong>
+        <p class="text-md lg:text-left leading-relaxed text-slate-500 text-gray mt-6">
+          Posljednje ažuriranje: {lastUpdated}
         </p>
       </div>
       <div class="w-full justify-self-end text-center mt-16 my-4">
